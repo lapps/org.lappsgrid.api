@@ -38,8 +38,8 @@ public interface WebService {
   Data execute(Data input);
 
   /**
-   * Configures a DataSource.
-   * <p/>
+   * Configures a WebService.
+   * <p>
    * Returns any errors in a {@link Data} object. Otherwise returns a Data
    * object with the "ok" Discriminator type.
    *
@@ -48,5 +48,5 @@ public interface WebService {
    */
   Data configure(Data config);
 
-   String getApiVersion();
+  String getApiVersion();
 }
