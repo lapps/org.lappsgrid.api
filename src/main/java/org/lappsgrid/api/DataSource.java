@@ -33,13 +33,20 @@ import javax.jws.WebService;
  */
 @Service(namespace = "lapps:datasource")
 @WebService
-public interface DataSource {
-  /**
-   * Returns a data object corresponding to the given query.
-   * the given query.
-   *
-   * @param query
-   * @return
-   */
-  Data query(Data query);
+public interface DataSource
+{
+   int size();
+
+   Data list();
+   Data list(int start, int end);
+   Data get(String key);
+
+   /**
+    * Returns a data object corresponding to the given query.
+    * the given query.
+    *
+    * @param query
+    * @return
+    */
+   Data query(Data query);
 }
