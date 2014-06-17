@@ -22,8 +22,9 @@ import javax.jws.WebService;
 
 
 /**
- * A DataSource returns {@link Data} objects based on an input query.
- * <p/>
+ * A DataSource returns {@link Data} objects from a source of data. What,
+ * exactly, is in the Data object will depend on the
+ * <p>
  * The type of Data returned by a data source depends on the data
  * source implementation. Possibilities include, but are not limited
  * to, entire documents, segments of documents, XML documents (or

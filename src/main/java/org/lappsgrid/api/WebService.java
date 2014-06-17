@@ -25,14 +25,14 @@ public interface WebService
     * Returns the set of data types that must be present in the
     * input to the {@link #execute(Data)} method
     */
-   @Deprecated
-   long[] requires();
+//   @Deprecated
+//   long[] requires();
 
    /**
     * Returns the set of data types that will be included in the output.
     */
-   @Deprecated
-   long[] produces();
+//   @Deprecated
+//   long[] produces();
 
    /**
     * Executes a web service on the given input. Returns the output, if any,

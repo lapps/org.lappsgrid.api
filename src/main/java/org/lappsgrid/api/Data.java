@@ -33,8 +33,7 @@ package org.lappsgrid.api;
 public class Data
 {
    protected String discriminator;
-   //protected String payload;
-   protected byte[] payload;
+   protected String payload;
 
    // Empty default constructor.
    public Data()
@@ -49,12 +48,6 @@ public class Data
    public Data(String type, String payload)
    {
       this.discriminator = type;
-      this.payload = payload.getBytes();
-   }
-
-   public Data(String type, byte[] payload)
-   {
-      this.discriminator = type;
       this.payload = payload;
    }
 
@@ -62,29 +55,14 @@ public class Data
    {
       return discriminator;
    }
-
-   public String getPayload()
+   public void setDiscriminator(String discriminator)
    {
-      if (payload == null)
-      {
-         return null;
-      }
-
-      return new String(payload);
+      this.discriminator = discriminator;
    }
 
-   /**
-    * Retrieves the payload string as a byte array.
-    *
-    * @return a byte array obtained by Base64 decoding the payload string.
-    */
-   public byte[] asBytes()
+   public String getPayload() { return payload; }
+   public void setPayload(String payload)
    {
-      return payload;
-   }
-
-   public boolean hasError()
-   {
-      return "error".equals(discriminator);
+      this.payload = payload;
    }
 }
