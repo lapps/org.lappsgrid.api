@@ -22,10 +22,9 @@ import javax.jws.WebService;
 
 
 /**
- * A DataSource returns {@link Data} objects from a source of data. What,
- * exactly, is in the Data object will depend on the
+ * A DataSource returns {@link Data} objects from a source of data.
  * <p>
- * The type of Data returned by a data source depends on the data
+ * The type of Data returned by a DataSource depends on the data
  * source implementation. Possibilities include, but are not limited
  * to, entire documents, segments of documents, XML documents (or
  * fragments), single words, or lists of annotations.
@@ -36,11 +35,34 @@ import javax.jws.WebService;
 @WebService
 public interface DataSource
 {
+	/**
+	 * Returns the size of this datasource, that is, the number of
+	 * unique keys returned by the @{link #list} method.
+	 *
+	 * @return The number of artifacts managed by this datasource.
+	 */
    int size();
 
+	/**
+	 * Returns a @{link Data} object containing a white-space
+	 * delimited list of keys. The particular white-space character
+	 * used SHOULD be specified in the discriminator field of the
+	 * @{code Data} object.
+	 *
+	 */
    Data list();
+
+	/**
+	 * Returns a @{link Data} object containing a white-space
+	 * delimited sub-list of keys. The particular white-space character
+	 * @param start
+	 * @param end
+	 * @return
+	 */
    Data list(int start, int end);
+
    Data get(String key);
+	Data getMetadata();
 
    /**
     * Returns a data object corresponding to the given query.
