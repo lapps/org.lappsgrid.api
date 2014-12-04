@@ -41,7 +41,7 @@ public interface DataSource
 	 *
 	 * @return The number of artifacts managed by this datasource.
 	 */
-   int size();
+   int size(Data data);
 
 	/**
 	 * Returns a @{link Data} object containing a white-space
@@ -50,18 +50,21 @@ public interface DataSource
 	 * @{code Data} object.
 	 *
 	 */
-   Data list();
+   Data list(Data data);
+
 
 	/**
-	 * Returns a @{link Data} object containing a white-space
-	 * delimited sub-list of keys. The particular white-space character
-	 * @param start
-	 * @param end
-	 * @return
+	 * Returns a single document from the DataSource.
+	 *
+	 * @param data A {@link org.lappsgrid.api.Data} object containing the
+	 *               ID of the document to be returned.
+	 * @return A {@link Data} object containing the document.
 	 */
-   Data list(int start, int end);
+   Data get(Data data);
 
-   Data get(String key);
+	/**
+	 * Returns the metadata for the DataSource in a JSON-LD payload.
+	 */
 	Data getMetadata();
 
    /**
