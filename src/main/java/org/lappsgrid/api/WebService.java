@@ -15,4 +15,5 @@ package org.lappsgrid.api;
 public interface WebService
 {
 	String execute(String input);
+	String getMetadata();
 }
