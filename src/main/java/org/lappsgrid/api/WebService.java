@@ -12,6 +12,9 @@ package org.lappsgrid.api;
  *
  * @author Keith Suderman
  */
+import jp.go.nict.langrid.commons.rpc.intf.Service;
+
+@Service(namespace = "lapps:service")
 public interface WebService
 {
 	String execute(String input);
