@@ -3,13 +3,15 @@ The LAPPS Grid API
 
 Interfaces and exception classes used by the [LAPPS Grid](http://www.lappsgrid.org).
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.lappsgrid/api/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/org.lappsgrid/api)
+
 ## Maven
 
 ```xml
 	<dependency>
 		<groupId>org.lappsgrid</groupId>
 		<artifactId>api</artifactId>
-		<version>2.0.0</version>
+		<version>2.0.1</version>
 	</dependency>
 ```
 
