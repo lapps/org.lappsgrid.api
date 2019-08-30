@@ -49,9 +49,32 @@ public interface WebService
 	 *
 	 *
 	 * @param input A JSON string representing a Data object
+	 * @param params A JSON string representation of a Map of key,value pairs.
+	 * @return A JSON string containing a Data object with a Container payload.
+	 */
+	default String execute(String input, String params) {
+		return execute(input);
+	}
+
+	/**
+	 * Entry point for a Lappsgrid service.
+	 * <p>
+	 * Each service on the Lappsgrid will accept {@code org.lappsgrid.serialization.Data} object
+	 * and return a {@code Data} object with a {@code org.lappsgrid.serialization.lif.Container}
+	 * payload.
+	 * <p>
+	 * Errors and exceptions the occur during processing should be wrapped in a {@code Data}
+	 * object with the discriminator set to http://vocab.lappsgrid.org/ns/error
+	 * <p>
+	 * See <a href="https://lapp.github.io/org.lappsgrid.serialization/index.html?org/lappsgrid/serialization/Data.html>org.lappsgrid.serialization.Data</a><br />
+	 * See <a href="https://lapp.github.io/org.lappsgrid.serialization/index.html?org/lappsgrid/serialization/lif/Container.html>org.lappsgrid.serialization.lif.Container</a><br />
+	 *
+	 *
+	 * @param input A JSON string representing a Data object
 	 * @return A JSON string containing a Data object with a Container payload.
 	 */
 	String execute(String input);
+
 
 	/**
 	 * Returns a JSON string containing metadata describing the service. The
